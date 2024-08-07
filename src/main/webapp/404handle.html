@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>404 Error page</title>
+</head>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background-color: #1a1a1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+
+.container {
+    text-align: center;
+    position: relative;
+}
+
+.ghost {
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    border-radius: 50% 50% 0 0;
+    position: relative;
+    margin: 0 auto 10px;
+    animation: float 2s ease-in-out infinite;
+}
+
+.ghost::before,
+.ghost::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 20px;
+    background: #fff;
+    border-radius: 50%;
+}
+
+.ghost::before {
+    left: -20px;
+}
+
+.ghost::after {
+    right: -20px;
+}
+
+.ghost .face {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.ghost .face::before,
+.ghost .face::after {
+    content: '';
+    display: block;
+    width: 10px;
+    height: 10px;
+    background: #000;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.ghost .face::before {
+    left: -15px;
+}
+
+.ghost .face::after {
+    right: -15px;
+}
+
+.shadow {
+    width: 60px;
+    height: 10px;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    position: absolute;
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: shrink 2s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes shrink {
+    0%, 100% {
+        transform: scaleX(1);
+    }
+    50% {
+        transform: scaleX(0.8);
+    }
+}
+
+.message {
+    margin-top: 20px;
+}
+
+.message h1 {
+    font-size: 72px;
+    margin: 0;
+}
+
+.message p {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.go-home {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000;
+    background-color: #fff;
+    text-decoration: none;
+    border-radius: 20px;
+}
+
+.go-home:hover {
+    background-color: #e6e6e6;
+}
+</style>
+<body>
+	 <div class="container">
+        <div class="ghost">
+            <div class="face"></div>
+        </div>
+        <div class="shadow"></div>
+        <div class="message">
+            <h1>404</h1>
+            <p>Oops... Nothing to see here.</p>
+            <a href="index.html" class="go-home">Go Back</a>
+        </div>
+    </div>
+</body>
+</html>
